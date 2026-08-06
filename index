@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR 3D Lab Atlas</title>
+  
+  <!-- Loads Google <model-viewer> engine -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --primary: #2563eb;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      background: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    header p {
+      margin: 0.5rem 0 0 0;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 2rem 0;
+    }
+
+    .atlas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin: 0 0 0.75rem 0;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 350px;
+      background-color: #f1f5f9;
+      border-radius: 8px;
+    }
+
+    .ar-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 2rem;
+      color: #64748b;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>3D Digital Lab Atlas</h1>
+    <p>Interact with specimens in 3D or tap "View in AR" to place them in your space</p>
+  </header>
+
+  <div class="container">
+    <div class="atlas-grid">
+
+      <!-- Specimen 1: Animated Cat -->
+      <div class="card">
+        <h2>Animated Cat</h2>
+        <model-viewer 
+          src="models/animatedcat.glb" 
+          ios-src="models/animatedcat.usdz" 
+          alt="3D Animated Cat" 
+          loading="lazy"
+          reveal="interaction"
+          ar ar-modes="webxr scene-viewer quick-look" 
+          camera-controls auto-rotate bounds="tight">
+          <button slot="ar-button" class="ar-btn">📷 View in AR</button>
+        </model-viewer>
+      </div>
+
+      <!-- Specimen 2: Breaker Box -->
+      <div class="card">
+        <h2>Breaker Box</h2>
+        <model-viewer 
+          src="models/breakerbox.glb" 
+          ios-src="models/breakerbox.usdz" 
+          alt="3D Breaker Box" 
+          loading="lazy"
+          reveal="interaction"
+          ar ar-modes="webxr scene-viewer quick-look" 
+          camera-controls auto-rotate bounds="tight">
+          <button slot="ar-button" class="ar-btn">📷 View in AR</button>
+        </model-viewer>
+      </div>
+
+      <!-- Specimen 3: Charité Hospital -->
+      <div class="card">
+        <h2>Charité Hospital</h2>
+        <model-viewer 
+          src="models/charitehospital.glb" 
+          ios-src="models/charitehospital.usdz" 
+          alt="3D Charite Hospital" 
+          loading="lazy"
+          reveal="interaction"
+          ar ar-modes="webxr scene-viewer quick-look" 
+          camera-controls auto-rotate bounds="tight">
+          <button slot="ar-button" class="ar-btn">📷 View in AR</button>
+        </model-viewer>
+      </div>
+
+      <!-- Specimen 4: Eukaryotic Cell -->
+      <div class="card">
+        <h2>Eukaryotic Cell</h2>
+        <model-viewer 
+          src="models/eukaryotecell.glb" 
+          ios-src="models/eukaryotecell.usdz" 
+          alt="3D Eukaryotic Cell" 
+          loading="lazy"
+          reveal="interaction"
+          ar ar-modes="webxr scene-viewer quick-look" 
+          camera-controls auto-rotate bounds="tight">
+          <button slot="ar-button" class="ar-btn">📷 View in AR</button>
+        </model-viewer>
+      </div>
+
+      <!-- Specimen 5: North America Map -->
+      <div class="card">
+        <h2>North America Map</h2>
+        <model-viewer 
+          src="models/namap.glb" 
+          ios-src="models/namap.usdz" 
+          alt="3D North America Map" 
+          loading="lazy"
+          reveal="interaction"
+          ar ar-modes="webxr scene-viewer quick-look" 
+          camera-controls auto-rotate bounds="tight">
+          <button slot="ar-button" class="ar-btn">📷 View in AR</button>
+        </model-viewer>
+      </div>
+
+      <!-- Specimen 6: Peirene Fountain -->
+      <div class="card">
+        <h2>Peirene Fountain</h2>
+        <model-viewer 
+          src="models/peirenefountain.glb" 
+          ios-src="models/peirenefountain.usdz" 
+          alt="3D Peirene Fountain" 
+          loading="lazy"
+          reveal="interaction"
+          ar ar-modes="webxr scene-viewer quick-look" 
+          camera-controls auto-rotate bounds="tight">
+          <button slot="ar-button" class="ar-btn">📷 View in AR</button>
+        </model-viewer>
+      </div>
+
+      <!-- Specimen 7: Sistine Chapel -->
+      <div class="card">
+        <h2>Sistine Chapel</h2>
+        <model-viewer 
+          src="models/sistinechapel.glb" 
+          ios-src="models/sistinechapel.usdz" 
+          alt="3D Sistine Chapel" 
+          loading="lazy"
+          reveal="interaction"
+          ar ar-modes="webxr scene-viewer quick-look" 
+          camera-controls auto-rotate bounds="tight">
+          <button slot="ar-button" class="ar-btn">📷 View in AR</button>
+        </model-viewer>
+      </div>
+
+      <!-- Specimen 8: Broad Street -->
+      <div class="card">
+        <h2>Broad Street</h2>
+        <model-viewer 
+          src="models/broadstreet.glb" 
+          ios-src="models/broadstreet.usdz" 
+          alt="3D Broad Street Model" 
+          loading="lazy"
+          reveal="interaction"
+          ar ar-modes="webxr scene-viewer quick-look" 
+          camera-controls auto-rotate bounds="tight">
+          <button slot="ar-button" class="ar-btn">📷 View in AR</button>
+        </model-viewer>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Interactive AR Biology Atlas • Compatible with iOS, Android, and Meta Quest 3</p>
+  </footer>
+
+</body>
+</html>
