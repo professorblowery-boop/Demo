@@ -205,8 +205,12 @@
           ar 
           ar-modes="webxr scene-viewer quick-look" 
           ar-placement="floor"
-          ar-scale="auto"
-          camera-controls auto-rotate bounds="tight" camera-target="0m 0m 0m">
+          ar-scale="fixed"
+          scale="0.1 0.1 0.1"
+          camera-target="auto auto auto"
+          bounds="tight"
+          camera-controls 
+          auto-rotate>
           <button slot="ar-button" class="ar-btn">📷 View in AR</button>
         </model-viewer>
       </div>
